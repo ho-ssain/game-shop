@@ -1,12 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
-import Home from "./pages/Home";
+import Root from "./components/pages/Root";
 
 function App() {
   return (
     <>
-      <Home />
+      <Root />
     </>
   );
 }

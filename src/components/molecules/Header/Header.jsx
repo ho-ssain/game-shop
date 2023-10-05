@@ -1,10 +1,12 @@
 import "./Header.css";
-import userImg from "../assets/pp/sk4.png";
+import userImg from "../../../assets/pp/sk4.png";
 
-function Header() {
+import PropTypes from "prop-types";
+
+function Header({ toggleActive }) {
   return (
     <header>
-      <a href="#" className="menu">
+      <a href="#" className="menu" onClick={toggleActive}>
         <i className="bi bi-sliders"></i>
       </a>
 
@@ -30,5 +32,9 @@ function Header() {
     </header>
   );
 }
+
+Header.propTypes = {
+  toggleActive: PropTypes.func.isRequired,
+};
 
 export default Header;

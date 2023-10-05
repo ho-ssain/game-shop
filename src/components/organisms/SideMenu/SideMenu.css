@@ -1,7 +1,7 @@
 .sideMenu {
   width: 20%;
   height: 100%;
-  padding: 30px;
+  padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 30px;
   background: var(--bgColor);
@@ -20,14 +20,14 @@
   align-items: center;
   gap: 15px;
   color: #fff;
-  font-size: 3.5em;
+  font-size: 2rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
 }
 
 .sideMenu .nav {
-  margin-top: 30px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -37,15 +37,15 @@
 .sideMenu .nav li a {
   text-decoration: none;
   color: #fff;
-  font-size: 1.2em;
+  font-size: 1rem;
   letter-spacing: 1px;
   display: inline-flex;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
   transition: 0.5s;
   background: var(--bgColor);
   border-radius: 20px;
-  padding: 10px 20px;
+  padding: 10px 10px;
   width: 100%;
 }
 
@@ -68,7 +68,7 @@
 .sideMenu .social li a {
   text-decoration: none;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   transition: 0.3s;
 }
 
@@ -88,4 +88,27 @@
 
 .sideMenu .social li .share:hover {
   color: var(--primary);
+}
+
+.sideMenu.active {
+  width: 7%;
+  transform: 1s;
+  overflow: hidden;
+  align-items: center;
+}
+
+.sideMenu.active .brand,
+.sideMenu.active .navName {
+  display: none;
+}
+
+.sideMenu.active .nav li a {
+  font-size: 1.8em;
+}
+
+.sideMenu.active .social {
+  padding: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

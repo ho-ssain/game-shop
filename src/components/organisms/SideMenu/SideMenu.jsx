@@ -2,18 +2,20 @@
 import "./SideMenu.css";
 import { useState } from "react";
 
-import NavList from "./NavList";
-import navListData from "../data/NavListData";
+import NavList from "../../atoms/NavList";
+import navListData from "../../../data/NavListData";
 
-import SocialList from "./SocialList";
-import socialListData from "../data/SocialListData";
+import SocialList from "../../atoms/SocialList";
+import socialListData from "../../../data/SocialListData";
 
-function SideMenu() {
+import PropTypes from "prop-types";
+
+function SideMenu({ active }) {
   const [navData, setNavData] = useState(navListData);
   const [socialData, setSocialData] = useState(socialListData);
 
   return (
-    <div className="sideMenu">
+    <div className={`sideMenu ${active ? "active" : undefined}`}>
       <a href="#" className="logo">
         <i className="bi bi-controller"></i>
         <span className="brand">Play</span>
@@ -31,5 +33,9 @@ function SideMenu() {
     </div>
   );
 }
+
+SideMenu.propTypes = {
+  active: PropTypes.bool.isRequired,
+};
 
 export default SideMenu;
