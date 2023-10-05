@@ -1,3 +1,3 @@
 #
 
-## Building an exciting Game Shop Dashboard with React.js, starting from scratch.
+## Building an exciting Game Shop Dashboard with React.js, starting from scratch
