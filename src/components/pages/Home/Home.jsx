@@ -1,13 +1,12 @@
+/* eslint-disable react/prop-types */
 import GameCard from "../../molecules/GameCard/Gamecard";
 import GameSwiper from "../../molecules/Swiper/GameSwiper";
 
 import "./Home.css";
 
-import PropTypes from "prop-types";
-
-function Home({ games }) {
+function Home({ games, reference }) {
   return (
-    <section id="home" className="home active">
+    <section id="home" className="home active" ref={reference}>
       <div className="container-fluid">
         <div className="row">
           <GameSwiper games={games} />
@@ -31,9 +30,5 @@ function Home({ games }) {
     </section>
   );
 }
-
-Home.propTypes = {
-  games: PropTypes.array.isRequired,
-};
 
 export default Home;

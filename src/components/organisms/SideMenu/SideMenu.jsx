@@ -14,6 +14,15 @@ function SideMenu({ active }) {
   const [navData, setNavData] = useState(navListData);
   const [socialData, setSocialData] = useState(socialListData);
 
+  const handleNavOnClick = (id) => {
+    const newNavData = navData.map((nav) => {
+      nav.active = false;
+      if (nav._id === id) nav.active = true;
+      return nav;
+    });
+    setNavData(newNavData);
+  };
+
   return (
     <div className={`sideMenu ${active ? "active" : undefined}`}>
       <a href="#" className="logo">
@@ -22,7 +31,7 @@ function SideMenu({ active }) {
       </a>
       <ul className="nav">
         {navData.map((item) => (
-          <NavList key={item._id} item={item} />
+          <NavList key={item._id} item={item} navOnClick={handleNavOnClick} />
         ))}
       </ul>
       <ul className="social">
