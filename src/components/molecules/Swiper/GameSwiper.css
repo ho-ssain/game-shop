@@ -23,8 +23,8 @@
   content: "";
   top: 0;
   left: 0;
-  right: 0;
   bottom: 0;
+  right: 0;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 30px !important;
 }
@@ -60,12 +60,12 @@
 .gameSlider .content {
   position: absolute;
   bottom: 20px;
-  z-index: 100%;
+  z-index: 1000;
   width: 60%;
 }
 
 .gameSlider .content h2 {
-  font-family: "Bauhaus 93 V2";
+  font-family: "Bauhaus 93 V2", cursive;
   font-size: 3.5rem;
 }
 
@@ -80,9 +80,8 @@
   gap: 20px;
 }
 
-.gameSlider .content .buttons a {
-  text-decoration: none;
-  color: #ffffff;
+.gameSlider .content .buttons .btn {
+  color: #fff;
   text-transform: uppercase;
 }
 
@@ -90,4 +89,58 @@
   padding: 8px 20px;
   background: var(--second);
   border-radius: 10px;
+}
+
+.gameSlider .content .buttons .playBtn {
+  border: none;
+  height: 50px;
+  width: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+}
+
+.playBtn .play {
+  display: block;
+}
+
+.playBtn .pause {
+  display: none;
+}
+
+.swiper-slide.swiper-slide-active .playBtn.active .play {
+  display: none;
+}
+
+.swiper-slide.swiper-slide-active .playBtn.active .pause {
+  display: block;
+}
+
+.swiper-slide .video iframe {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 85%;
+  height: 75%;
+  border-radius: 0 30px 0 30px !important;
+  border: 5px solid !important;
+  background: var(--second);
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.35);
+  z-index: 1100;
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(0);
+  transition: 0.5s;
+  transform-origin: top right;
+}
+
+.swiper-slide.swiper-slide-active .video.active iframe {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
 }

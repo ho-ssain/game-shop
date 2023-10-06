@@ -1,4 +1,4 @@
-import Header from "../molecules/Header/Header";
+import Header from "../organisms/Header/Header";
 import SideMenu from "../organisms/SideMenu/SideMenu";
 import Home from "./Home/Home";
 import "./Root.css";

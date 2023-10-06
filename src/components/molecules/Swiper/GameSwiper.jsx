@@ -1,19 +1,21 @@
+import { EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
+import "swiper/css/effect-coverflow";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 
 import "./GameSwiper.css";
 
-import { EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
-
 import PropTypes from "prop-types";
 import { useState } from "react";
+import GameSlide from "../../atoms/GameSlide";
 
 function GameSwiper({ games }) {
   const [active, setActive] = useState(false);
-
-  const handlePlayBtn = () => {
+  const toggleVideo = () => {
     setActive(!active);
   };
 
@@ -39,32 +41,9 @@ function GameSwiper({ games }) {
       modules={[EffectCoverflow, Navigation, Autoplay]}
       className="gameSwiper"
     >
-      {games.map((g) => (
-        <SwiperSlide key={g._id}>
-          <div className="gameSlider">
-            <img src={g.img} alt="Game Image" />
-            <div className="content">
-              <h2>{g.title}</h2>
-              <p>{g.description}</p>
-              <div className="buttons">
-                <a href="#" className="orderBtn">
-                  Order Now
-                </a>
-                <a
-                  href="#"
-                  className={`playBtn ${active ? "active" : undefined}`}
-                  onClick={handlePlayBtn}
-                >
-                  <span className="pause">
-                    <i className="bi bi-pause-fill"></i>
-                  </span>
-                  <span className="play">
-                    <i className="bi bi-play-fill"></i>
-                  </span>
-                </a>
-              </div>
-            </div>
-          </div>
+      {games.map((game) => (
+        <SwiperSlide key={game._id}>
+          <GameSlide game={game} active={active} toggleVideo={toggleVideo} />
         </SwiperSlide>
       ))}
     </Swiper>

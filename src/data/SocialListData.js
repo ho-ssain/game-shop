@@ -5,6 +5,7 @@ const socialListData = [
     name: "Meta",
     icon: "bi-meta",
     active: true,
+    class: "",
   },
   {
     _id: 2,
@@ -12,6 +13,7 @@ const socialListData = [
     name: "Twitter",
     icon: "bi-twitter-x",
     active: false,
+    class: "",
   },
   {
     _id: 3,
@@ -19,6 +21,7 @@ const socialListData = [
     name: "Youtube",
     icon: "bi-youtube",
     active: false,
+    class: "",
   },
   {
     _id: 4,
