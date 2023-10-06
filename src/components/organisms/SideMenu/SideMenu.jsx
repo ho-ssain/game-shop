@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import "./SideMenu.css";
 import { useState } from "react";
@@ -8,19 +9,18 @@ import navListData from "../../../data/NavListData";
 import SocialList from "../../atoms/SocialList";
 import socialListData from "../../../data/SocialListData";
 
-import PropTypes from "prop-types";
-
-function SideMenu({ active }) {
+function SideMenu({ active, sectionActive }) {
   const [navData, setNavData] = useState(navListData);
   const [socialData, setSocialData] = useState(socialListData);
 
-  const handleNavOnClick = (id) => {
+  const handleNavOnClick = (id, target) => {
     const newNavData = navData.map((nav) => {
       nav.active = false;
       if (nav._id === id) nav.active = true;
       return nav;
     });
     setNavData(newNavData);
+    sectionActive(target);
   };
 
   return (
@@ -42,9 +42,5 @@ function SideMenu({ active }) {
     </div>
   );
 }
-
-SideMenu.propTypes = {
-  active: PropTypes.bool.isRequired,
-};
 
 export default SideMenu;

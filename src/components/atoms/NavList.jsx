@@ -6,7 +6,7 @@ function NavList({ item, navOnClick }) {
       <a
         href="#"
         className={`${item.active ? "active" : undefined}`}
-        onClick={() => navOnClick(item._id)}
+        onClick={() => navOnClick(item._id, item.target)}
       >
         <i className={`bi ${item.icon}`}></i>
         <span className="navName">{item.name}</span>
